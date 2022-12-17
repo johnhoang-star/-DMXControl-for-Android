@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/prism_fragment"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_med"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/relativeLayout">
+
+            <Button
+                android:layout_width="@dimen/button_width_large"
+                android:layout_height="@dimen/button_height_med"
+                style="@android:style/TextAppearance.Medium"
+                android:background="@drawable/btn_numbers_selector"
+                android:text="@string/programmer_fragment_clear"
+                android:id="@+id/programmer_clear"
+                android:layout_gravity="left"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"/>
+
+            <Button
+                android:layout_width="@dimen/button_width_large"
+                android:layout_height="@dimen/button_height_med"
+                style="@android:style/TextAppearance.Medium"
+                android:background="@drawable/btn_numbers_selector"
+                android:text="@string/programmer_fragment_undo_clear"
+                android:id="@+id/programmer_undoclear"
+                android:layout_gravity="right"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/programmer_clear"/>
+
+            <Spinner
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/programmer_spinner"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/programmer_undoclear"
+                style="@style/spinner_style"
+                android:spinnerMode="dropdown"/>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_normal">
+
+            <ExpandableListView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/programmer_list"
+                android:scrollbarThumbVertical="@drawable/scrollbar_vertical_style"
+                android:scrollingCache="false"
+                android:layout_marginRight="-1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="5dp"
+                android:layout_marginLeft="-5dp"/>
+        </FrameLayout>
+
+    </LinearLayout>
+</RelativeLayout>

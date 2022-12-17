@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+          package="de.dmxcontrol.android"
+          android:versionCode="1"
+          android:versionName="0.0.1"
+          android:installLocation="preferExternal">
+
+    <application
+        android:name="de.dmxcontrol.app.DMXControlApplication"
+        android:icon="@drawable/androidmann_neu"
+        android:label="@string/app_name"
+        android:largeHeap="true"
+        android:theme="@style/DMXControl.Theme">
+        <activity
+            android:name="de.dmxcontrol.activity.ControlActivity"
+            android:label="@string/app_name"
+            android:launchMode="singleTop">
+            <!--eta-data
+                android:name="com.sec.android.airview.enable"
+                android:value="true" />-->
+
+            <!--<intent-filter>
+                <action android:name="com.sec.android.airview.HOVER" />
+            </intent-filter>-->
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name="org.acra.CrashReportDialog"
+            android:theme="@android:style/Theme.Dialog"
+            android:launchMode="singleInstance"
+            android:excludeFromRecents="true"
+            android:finishOnTaskLaunch="true"/>
+
+        <activity
+            android:name="de.dmxcontrol.activity.PreferencesActivity"
+            android:label="@string/pref_set_preferences"/>
+        <activity
+            android:name="de.dmxcontrol.activity.ServerConnection"
+            android:label="@string/menu_set_connection"/>
+        <activity
+            android:name="de.dmxcontrol.activity.LiveActivity"
+            android:label="@string/menu_set_live"/>
+
+        <service android:name="de.dmxcontrol.network.NetworkService"/>
+    </application>
+
+    <uses-sdk
+        android:minSdkVersion="15"
+        android:targetSdkVersion="21"/>
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"/>
+    <uses-permission android:name="android.permission.CHANGE_WIFI_MULTICAST_STATE"/>
+
+    <uses-permission android:name="android.permission.READ_LOGS"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+
+    <uses-permission android:name="android.permission.VIBRATE"/>
+
+    <uses-feature
+        android:name="android.hardware.sensor.accelerometer"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.sensor.gyroscope"
+        android:required="false"/>
+
+    <uses-feature
+        android:name="android.hardware.touchscreen"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch.distinct"
+        android:required="false"/>
+    <uses-feature
+        android:name="android.hardware.touchscreen.multitouch.jazzhand"
+        android:required="false"/>
+
+    <uses-feature
+        android:name="android.hardware.wifi"
+        android:required="true"/>
+
+</manifest>

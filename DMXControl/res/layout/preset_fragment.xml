@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/preset_fragment"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:gravity="center"
+                android:orientation="vertical">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="0dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="0dp">
+
+        <RelativeLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/button_height_med"
+            android:layout_gravity="center_horizontal"
+            android:id="@+id/relativeLayout">
+
+            <Button
+                android:layout_width="@dimen/button_width_med"
+                android:layout_height="@dimen/button_height_med"
+                style="@android:style/TextAppearance.Medium"
+                android:background="@drawable/btn_numbers_selector"
+                android:text="@string/preset_fragment_add"
+                android:textColor="@color/white_smoke"
+                android:id="@+id/preset_add"
+                android:layout_gravity="left"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"/>
+
+            <Button
+                android:layout_width="@dimen/button_width_large"
+                android:layout_height="@dimen/button_height_med"
+                android:enabled="false"
+                style="@android:style/TextAppearance.Medium"
+                android:background="@drawable/btn_numbers_selector"
+                android:text="@string/preset_fragment_apply"
+                android:textColor="@color/white_smoke"
+                android:id="@+id/preset_apply"
+                android:layout_gravity="right"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"/>
+
+        </RelativeLayout>
+
+        <FrameLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:background="@drawable/border_normal">
+
+            <ListView
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:id="@+id/preset_list"
+                android:fadeScrollbars="false"
+                android:scrollbarThumbVertical="@drawable/scrollbar_vertical_style"
+                android:layout_gravity="center_horizontal|top"
+                android:smoothScrollbar="true"
+                android:drawSelectorOnTop="false"
+                android:choiceMode="singleChoice"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:scrollingCache="false"
+                android:layout_marginLeft="-5dp"
+                android:layout_marginRight="-1dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"/>
+        </FrameLayout>
+
+    </LinearLayout>
+</RelativeLayout>
